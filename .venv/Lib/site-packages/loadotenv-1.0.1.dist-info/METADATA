@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: loadotenv
+Version: 1.0.1
+Summary: Reinventing the wheel to load .env variables
+Author-email: "Jarlem Red J. de Peralta" <lmoa.jhdp@gmail.com>
+Project-URL: Homepage, https://github.com/lemredd/loadotenv
+Project-URL: Issues, https://github.com/lemredd/loadotenv/issues
+Keywords: .env,environment,utility
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![ci](https://github.com/lemredd/loadotenv/actions/workflows/core.yml/badge.svg?branch=main)](https://github.com/lemredd/loadotenv/actions/workflows/core.yml)
+
+# `loadotenv`
+Reinventing the wheel to load .env variables
+
+## Requirement/s
+- Python version: `>= 3.9`
+
+## Installation
+```python
+pip install loadotenv
+```
+
+## Usage
+From a `.py` file near your `.env` file:
+
+```py
+from loadotenv import load_env
+
+load_env()
+# load_env(file_loc="/loc/to/.env")
+```
+
+## Contributing
+Issues and PRs are welcome!
