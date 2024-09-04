@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import os
 import sqlite3
 from openai import OpenAI
@@ -124,7 +124,11 @@ def webhook_whatsapp():
                 return jsonify({"status": "error", "message": str(e)}), 500
         
         return jsonify({"status": "no_message_found"}), 400
-    
+  
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
+  
 if __name__ == "__main__":
     create_db()  # Ensure the database and table are created
     app.run(debug=True)
