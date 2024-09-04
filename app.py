@@ -10,6 +10,9 @@ app = Flask(__name__)
 # Load environment variables once at the start
 load_dotenv()
 openai_api_key = os.getenv("API_KEY")
+
+tokenface = os.getenv("token")
+idnumbertoken = os.getenv("idphonenumber")
 client = OpenAI(api_key=openai_api_key)
 
 # SQLite Configuration
@@ -68,8 +71,8 @@ def save_response_to_db(phone_number, message, response):
             connection.close()
             
 def sendmessage(phonenumberdestiny,response):
-    token ="EAAMvhnaWLRkBOZBsJk6B5GwpL9SFkGwVQtiV58bQoEkxrHbJOV8yVTZBHLPVDJtd3YqBf0DCLG6PV5Ct1474VEeZC07lAZAOjNKrpVO2sJJr1GCSjHnOvoCgDlKCsKgVC5v5lchvH05bZCJk51mg2lXmf83CxT1OsqIgQ2hn2znXzcCrUCf5Xf5RJZAVzkL6cVDDyVlOVZCGeQPa2bkchdt"
-    idphonenumber="347363835138076"
+    token = tokenface
+    idphonenumber= idnumbertoken
     messagedestiny= WhatsApp(token,idphonenumber)
     phonenumberdestiny=phonenumberdestiny.replace("521","52")
     return messagedestiny.send_message(response,phonenumberdestiny)
